@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="ar">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>تحليل في بيتك</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <header>
+        <h1>المتميز</h1>
+        <h2>تطبيق السحب المنزلي - تحليل في بيتك</h2>
+    </header>
+
+    <div class="container">
+        <h1>حجز موعد سحب العينة</h1>
+        <form id="appointmentForm">
+            <label for="name">الاسم الكامل</label>
+            <input type="text" id="name" required>
+
+            <label for="date">تاريخ الموعد</label>
+            <input type="date" id="date" required>
+
+            <label for="time">الوقت</label>
+            <input type="time" id="time" required>
+
+            <label for="location">العنوان</label>
+            <input type="text" id="location" required>
+
+            <label for="notes">ملاحظات إضافية</label>
+            <textarea id="notes" rows="4"></textarea>
+
+            <button type="button" onclick="bookAppointment()">حجز الموعد</button>
+        </form>
+
+        <div class="contact">
+            <h2>للتواصل</h2>
+            <p>يمكنك التواصل معنا عبر الهاتف أو الواتساب:</p>
+            <p><strong>رقم الهاتف:</strong> <a href="tel:+0916660216">0916660216</a></p>
+            <button onclick="openWhatsApp()">تواصل عبر الواتساب</button>
+            <button onclick="callDirectly()">اتصال مباشر</button>
+        </div>
+    </div>
+
+    <script>
+        function bookAppointment() {
+            const name = document.getElementById("name").value;
+            const date = document.getElementById("date").value;
+            const time = document.getElementById("time").value;
+            const location = document.getElementById("location").value;
+            const notes = document.getElementById("notes").value;
+
+            if (name && date && time && location) {
+                alert("تم حجز موعدك بنجاح!");
+            } else {
+                alert("يرجى ملء جميع الحقول المطلوبة.");
+            }
+        }
+
+        function openWhatsApp() {
+            window.open("https://wa.me/0916660216", "_blank");
+        }
+
+        function callDirectly() {
+            window.location.href = "tel:+0916660216";
+        }
+    </script>
+</body>
+</html>
